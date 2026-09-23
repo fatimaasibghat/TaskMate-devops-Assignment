@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TaskMate - To-Do List</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="container">
+    <section class="todo-card">
+      <h1>TaskMate</h1>
+      <p class="subtitle">Organize your day, one task at a time.</p>
+
+      <div class="input-row">
+        <input id="taskInput" type="text" placeholder="Enter a task..." maxlength="100">
+        <button id="addBtn">Add Task</button>
+      </div>
+
+      <div class="toolbar">
+        <span id="taskCount">0 tasks</span>
+        <button id="clearBtn" class="secondary">Clear Completed</button>
+      </div>
+
+      <ul id="taskList"></ul>
+      <p id="emptyMessage" class="empty">No tasks yet. Add your first task!</p>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

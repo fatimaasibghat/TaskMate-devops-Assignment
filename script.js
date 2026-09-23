@@ -86,4 +86,3 @@ clearBtn.addEventListener("click", () => {
 });
 
 renderTasks();
-if (

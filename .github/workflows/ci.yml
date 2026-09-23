@@ -1,0 +1,34 @@
+name: TaskMate CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Check required files
+        run: |
+          test -f index.html
+          test -f style.css
+          test -f script.js
+          test -f .github/workflows/ci.yml
+
+      - name: Basic HTML check
+        run: |
+          grep -q "<!DOCTYPE html>" index.html
+          grep -q "<title>TaskMate - To-Do List</title>" index.html
+
+      - name: JavaScript syntax check
+        run: |
+          node --check script.js
+
+      - name: CI success message
+        run: echo "All basic checks passed successfully."
